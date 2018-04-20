@@ -1,5 +1,7 @@
 package com.application.sso.server.service;
 
+import java.util.List;
+
 import com.application.sso.server.entity.RoleQueryParams;
 import com.application.sso.server.model.Role;
 import com.github.pagehelper.PageInfo;
@@ -21,4 +23,5 @@ public interface RoleService {
 	void insert(Role role);
 	
 	void delete(String id);
+	
 }

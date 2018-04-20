@@ -11,6 +11,8 @@ public class ResourceQueryParams implements Serializable {
 	
 	private String appCode;
 	
+	private String roleId;
+	
 	private String name;
 	
 	private Integer type;

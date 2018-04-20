@@ -1,5 +1,7 @@
 package com.application.sso.server.service;
 
+import java.util.List;
+
 import com.application.sso.server.entity.ResourceQueryParams;
 import com.application.sso.server.model.Resource;
 import com.github.pagehelper.PageInfo;
@@ -21,4 +23,6 @@ public interface ResourceService {
 	void insert(Resource resource);
 	
 	void delete(String id);
+	
+	void updateRolePermission(String roleId, List<String> resourceIds);
 }

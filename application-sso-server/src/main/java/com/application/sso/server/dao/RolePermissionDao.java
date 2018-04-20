@@ -6,8 +6,6 @@ import com.tech.application.base.dao.mybatis.BaseDao;
 
 public interface RolePermissionDao extends BaseDao<RolePermission, RolePermission, String>{
 	
-	void batchInsert(RolePermission rolePermission);
-	
 	void deleteByRoleId(String roleId);
 
 }

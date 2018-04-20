@@ -13,7 +13,7 @@ public class RolePermission implements Serializable {
 
     private String roleId;
 
-    private String permissionId;
+    private String resourceId;
 
     private Date createTime;
 

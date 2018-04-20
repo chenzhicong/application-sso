@@ -52,7 +52,7 @@ CREATE TABLE `SYS_USER` (
   `head_img_url` varchar(255) DEFAULT NULL COMMENT '用户头像url',
   `last_login_ip` varchar(20) DEFAULT NULL COMMENT '最后登录IP',
   `last_login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
-  `login_count` int(11) NOT NULL COMMENT '登录总次数',
+  `login_count` int(11) DEFAULT 0 COMMENT '登录总次数',
   `status` int(1) NOT NULL DEFAULT 1 COMMENT '状态：1：正常  0：禁用',
   `create_time` datetime DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
   `update_time` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',

@@ -1,5 +1,7 @@
 package com.application.sso.server.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
@@ -45,7 +47,7 @@ public class ResourceController extends BaseController {
 	@ApiOperation(value = "分页查询资源", httpMethod = "GET")
 	@RequestMapping(value = "findByPage", method = RequestMethod.GET)
 	public Result<PageInfo<Resource>> findByPage(
-			@ApiParam(value = "应用编码", required = false) @RequestParam(required = false) String appCode,
+			@ApiParam(value = "应用编码", required = true) @RequestParam(required = true) String appCode,
 			@ApiParam(value = "角色id", required = false) @RequestParam(required = false) String roleId,
 			@ApiParam(value = "资源名称", required = false) @RequestParam(required = false) String name,
 			@ApiParam(value = "资源类型", required = false) @RequestParam(required = false) Integer type,
@@ -87,7 +89,7 @@ public class ResourceController extends BaseController {
 		App app = appService.getByCode(appCode);
 
 		Resource resource = new Resource();
-		resource.setId(IdUtil.getUUID());
+		resource.setId(IdUtil.generateUUID());
 		resource.setAppId(app.getId());
 		resource.setParentId(parentId);
 		resource.setName(name);
@@ -96,6 +98,17 @@ public class ResourceController extends BaseController {
 		resource.setUrl(url);
 		resource.setStatus(status);
 		resourceService.insert(resource);
+		return super.buildSuccessResult(null);
+	}
+	
+	@ApiOperation(value = "更新角色权限", httpMethod = "POST")
+	@RequestMapping(value = "updateRolePermission", method = RequestMethod.POST)
+	public Result<Resource> updateRolePermission(
+			@ApiParam(value = "角色id", required = true) @RequestParam(required = true) String roleId,
+			@ApiParam(value = "资源id：可接收多个，用\",\"隔开 ", required = false) @RequestParam(required = false) String resourceIds) {
+		
+		List<String> resourceIdList = super.getParamList(resourceIds, ",");
+		resourceService.updateRolePermission(roleId, resourceIdList);
 		return super.buildSuccessResult(null);
 	}
 }

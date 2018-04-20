@@ -38,9 +38,6 @@
 			<if test="appCode != null">
 				and app.code = #{appCode}
 			</if>
-			<if test="roleId != null">
-				and user.role_id = #{roleId}
-			</if>
 			<if test="account != null">
 				and user.account = #{account}
 			</if>
@@ -49,6 +46,12 @@
 			</if>
 			<if test="name != null">
 				and user.name = #{name}
+			</if>
+			<if test="nickName != null">
+				and user.nick_name = #{nickName}
+			</if>
+			<if test="sex != null">
+				and user.sex = #{sex}
 			</if>
 			<if test="status != null">
 				and user.status = #{status}

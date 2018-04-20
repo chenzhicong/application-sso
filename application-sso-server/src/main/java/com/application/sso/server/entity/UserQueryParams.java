@@ -10,13 +10,15 @@ public class UserQueryParams implements Serializable {
 	
 	private String appCode;
 	
-	private String roleId;
-	
 	private String account;
 	
 	private String phone;
 	
 	private String name;
+	
+	private String nickName;
+	
+	private Integer sex;
 	
 	private Integer status;
 	

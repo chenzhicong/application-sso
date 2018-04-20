@@ -25,13 +25,17 @@
 	<select id="findByPage" resultMap="BaseResultMap"
 		parameterType="com.application.sso.server.entity.ResourceQueryParams">
 		select resource.*
-		from sys_resource resource, sys_app app
+		from sys_resource resource, sys_app app, sys_role_permission rpermission
 		<where>
 			<if test="true == true">
 				resource.app_id = app.id
+				and resource.id = rpermission.resource_id
 			</if>
 			<if test="appCode != null">
 				and app.app_code = #{appCode}
+			</if>
+			<if test="role_id != null">
+				and rpermission.role_id = #{roleId}
 			</if>
 			<if test="name != null">
 				and resource.name = #{name}

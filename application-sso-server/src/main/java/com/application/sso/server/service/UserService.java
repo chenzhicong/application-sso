@@ -14,6 +14,8 @@ public interface UserService {
 	 */
 	PageInfo<User> findByPage(UserQueryParams userQueryParams, Integer pageNo, Integer pageSize);
 	
+	User get(String id);
+	
 	void update(User user);
 	
 	void insert(User user);

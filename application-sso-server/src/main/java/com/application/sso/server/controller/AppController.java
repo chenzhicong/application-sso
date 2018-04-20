@@ -74,7 +74,7 @@ public class AppController extends BaseController {
 			@ApiParam(value = "状态 0:禁用 1:正常", required = false) @RequestParam(required = false, defaultValue = "1") Integer status) {
 		
 		App app = new App();
-		app.setId(IdUtil.getUUID());
+		app.setId(IdUtil.generateUUID());
 		app.setCode(appCode);
 		app.setName(name);
 		app.setDescription(description);

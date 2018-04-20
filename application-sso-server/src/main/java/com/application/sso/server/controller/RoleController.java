@@ -41,7 +41,7 @@ public class RoleController extends BaseController {
 	@ApiOperation(value = "分页查询角色", httpMethod = "GET")
 	@RequestMapping(value = "findByPage", method = RequestMethod.GET)
 	public Result<PageInfo<Role>> findByPage(
-			@ApiParam(value = "应用编码", required = false) @RequestParam(required = false) String appCode,
+			@ApiParam(value = "应用编码", required = true) @RequestParam(required = true) String appCode,
 			@ApiParam(value = "角色名称", required = false) @RequestParam(required = false) String name,
 			@ApiParam(value = "角色状态  0:禁用   1:正常 ", required = false) @RequestParam(required = false) Integer status,
 			@ApiParam(value = "页码", required = true) @RequestParam(required = true, defaultValue = "1") Integer pageNo,
@@ -77,7 +77,7 @@ public class RoleController extends BaseController {
 		App app = appService.getByCode(appCode);
 
 		Role role = new Role();
-		role.setId(IdUtil.getUUID());
+		role.setId(IdUtil.generateUUID());
 		role.setAppId(app.getId());
 		role.setName(name);
 		role.setDescription(description);
