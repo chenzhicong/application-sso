@@ -1,22 +1,14 @@
 package com.application.sso.server.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.application.sso.server.entity.AppQueryParams;
-import com.application.sso.server.entity.RoleQueryParams;
 import com.application.sso.server.model.App;
-import com.application.sso.server.model.Role;
 import com.application.sso.server.service.AppService;
-import com.application.sso.server.service.RoleService;
-import com.application.sso.server.service.impl.RoleServiceImpl;
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageInfo;
 import com.tech.application.base.controller.BaseController;
 import com.tech.application.base.model.Result;
@@ -25,7 +17,6 @@ import com.tech.application.base.util.IdUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-import io.swagger.annotations.ApiResponse;
 import lombok.extern.slf4j.Slf4j;
 
 @Api(value = "AppController", tags = { "应用接口" })
@@ -45,7 +36,8 @@ public class AppController extends BaseController {
 			@ApiParam(value = "角色状态  0:禁用   1:正常 ", required = false) @RequestParam(required = false) Integer status,
 			@ApiParam(value = "页码", required = true) @RequestParam(required = true, defaultValue = "1") Integer pageNo,
 			@ApiParam(value = "每页记录数", required = true) @RequestParam(required = true, defaultValue = "10") Integer pageSize) {
-
+		
+		log.info("test");
 		AppQueryParams appQueryParams = new AppQueryParams();
 		appQueryParams.setCode(code);
 		appQueryParams.setName(name);
