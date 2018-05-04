@@ -50,10 +50,8 @@ public class SsoController extends BaseController {
 			@ApiParam(value = "token", required = true) @RequestParam(required = true) String jwt) {
 		
 		ssoService.logout(jwt);
-		return super.buildSuccessResult(jwt);
+		return super.buildSuccessResult(null);
 	}
-	
-	
 	
 	private void addTokenInCookie(String token, HttpServletRequest request, HttpServletResponse response) {
 		// Cookie添加token
