@@ -26,15 +26,18 @@ public class UserServiceImpl implements UserService {
 		PageInfo<User> pageInfo = new PageInfo<User>(page);
 		return pageInfo;
 	}
-
+	
+	@Override
 	public void update(User user) {
 		userDao.update(user);
 	}
-
+	
+	@Override
 	public void insert(User user) {
 		userDao.insert(user);
 	}
-
+	
+	@Override
 	public void delete(String id) {
 		userDao.delete(id);
 	}
@@ -42,6 +45,11 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User get(String id) {
 		return userDao.get(id);
+	}
+
+	@Override
+	public User getByAccountAndPassword(String account, String password) {
+		return userDao.getByAccountAndPassword(account, password);
 	}
 
 }

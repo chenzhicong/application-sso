@@ -102,6 +102,28 @@ public class UserController extends BaseController {
 	}
 	
 	/*
+	@ApiOperation(value = "登录", httpMethod = "POST")
+	@RequestMapping(value = "login", method = RequestMethod.POST)
+	public Result<Object> login(
+			@ApiParam(value = "登录名或手机号", required = true) @RequestParam(required = true) String account,
+			@ApiParam(value = "用户登录密码", required = true) @RequestParam(required = true) String password) {
+		
+		User user = new User();
+		user.setId(IdUtil.generateUUID());
+		user.setRoleId(roleId);
+		user.setAccount(account);
+		user.setPhone(phone);
+		user.setPassword(PasswordUtil.encrypt(password));
+		user.setName(name);
+		user.setNickName(nickName);
+		user.setSex(sex);
+		user.setStatus(status);
+		userService.insert(user);
+		return super.buildSuccessResult(null);
+	}
+	*/
+	
+	/*
 	@ApiOperation(value = "删除用户", httpMethod = "POST")
 	@RequestMapping(value = "deleteUser", method = RequestMethod.POST)
 	public Result<User> deleteUser(

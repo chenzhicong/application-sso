@@ -33,7 +33,8 @@
 	<aop:aspectj-autoproxy />
 
 	<import resource="classpath:config/spring-orm.xml" />
-	<import resource="classpath:config/spring-mvc.xml" /> 
+	<!-- <import resource="classpath:config/spring-mvc.xml" />  -->
 	<import resource="classpath:config/dubbo-service.xml" />
+	<import resource="classpath:config/spring-redis.xml" />
 	
 </beans>

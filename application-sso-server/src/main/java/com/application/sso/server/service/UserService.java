@@ -1,5 +1,7 @@
 package com.application.sso.server.service;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.application.sso.server.entity.UserQueryParams;
 import com.application.sso.server.model.User;
 import com.github.pagehelper.PageInfo;
@@ -21,4 +23,7 @@ public interface UserService {
 	void insert(User user);
 	
 	void delete(String id);
+	
+	User getByAccountAndPassword(String account, String password);
+
 }

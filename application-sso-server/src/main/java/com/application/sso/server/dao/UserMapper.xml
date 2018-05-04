@@ -66,10 +66,19 @@
 		from sys_user
 		where id = #{id,jdbcType=VARCHAR}
 	</select>
+	
+	<select id="getByAccountAndPassword" resultMap="BaseResultMap"
+		parameterType="java.lang.String">
+		select *
+		from sys_user
+		where password = #{password} and (account = #{account} or phone = #{account})
+	</select>
+	
 	<delete id="delete" parameterType="java.lang.String">
 		delete from sys_user
 		where id = #{id,jdbcType=VARCHAR}
 	</delete>
+	
 	<insert id="insert" parameterType="com.application.sso.server.model.User">
 		insert into sys_user (id, role_id, account, phone,
 		password, name, nick_name,
