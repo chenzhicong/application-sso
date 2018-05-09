@@ -53,7 +53,7 @@
 	<!-- 扫描mybatis dao/mapper -->
 	<bean id="mapperScannerConfigurer" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
-		<property name="basePackage" value="com.application.sso.server.dao" />
+		<property name="basePackage" value="com.tech.application.sso.dao" />
 	</bean>
 	
 	<!-- 事务配置 -->
@@ -75,7 +75,7 @@
 
     <aop:config>
     	<!-- 所有service类需要放在 cn.com.ftsafe.service 包或其子包下-->
-        <aop:pointcut id="txPointcut" expression="execution(* com.application.sso.server.service..*.*(..))" />
+        <aop:pointcut id="txPointcut" expression="execution(* com.tech.application.sso.service..*.*(..))" />
         <aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut" />
     </aop:config>
 

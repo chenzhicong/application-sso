@@ -14,7 +14,7 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd">
 	
 	<!-- 配置要扫描的controller包和swagger -->
-	<context:component-scan base-package="com.application.sso.server.controller, com.application.sso.server.swagger" />
+	<context:component-scan base-package="com.tech.application.sso.controller, com.tech.application.sso.swagger" />
 	<aop:aspectj-autoproxy />
 	
 	<!-- 配置view -->

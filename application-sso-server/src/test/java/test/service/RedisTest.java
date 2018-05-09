@@ -10,7 +10,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.application.sso.server.model.App;
+import com.tech.application.sso.model.App;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:config/spring-context.xml")

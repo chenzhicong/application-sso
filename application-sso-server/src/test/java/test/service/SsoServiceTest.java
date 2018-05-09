@@ -6,9 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import com.application.sso.server.model.User;
-import com.application.sso.server.service.SsoService;
-import com.application.sso.server.service.impl.RoleServiceImpl;
+import com.tech.application.sso.model.User;
+import com.tech.application.sso.service.SsoService;
 
 import lombok.extern.slf4j.Slf4j;
 
