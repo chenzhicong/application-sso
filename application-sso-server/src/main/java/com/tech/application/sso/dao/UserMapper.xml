@@ -27,7 +27,7 @@
 	</sql>
 	
 	<select id="findByPage" resultMap="BaseResultMap"
-		parameterType="com.application.sso.server.entity.UserQueryParams">
+		parameterType="com.tech.application.sso.entity.UserQueryParams">
 		select user.*
 		from sys_user user, sys_role role, sys_app app
 		<where>
@@ -79,7 +79,7 @@
 		where id = #{id,jdbcType=VARCHAR}
 	</delete>
 	
-	<insert id="insert" parameterType="com.application.sso.server.model.User">
+	<insert id="insert" parameterType="com.tech.application.sso.model.User">
 		insert into sys_user (id, role_id, account, phone,
 		password, name, nick_name,
 		sex, head_img_url, last_login_ip,
@@ -97,7 +97,7 @@
 		)
 	</insert>
 	
-	<update id="update" parameterType="com.application.sso.server.model.User">
+	<update id="update" parameterType="com.tech.application.sso.model.User">
 		update sys_user
 		<set>
 			<if test="roleId != null">

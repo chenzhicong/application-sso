@@ -17,7 +17,7 @@
 		update_time, deleted
 	</sql>
 	<select id="findByPage" resultMap="BaseResultMap"
-		parameterType="com.application.sso.server.entity.RoleQueryParams">
+		parameterType="com.tech.application.sso.entity.RoleQueryParams">
 		select role.*
 		from sys_role role, sys_app app
 		<where>
@@ -49,7 +49,7 @@
 		where id =
 		#{id,jdbcType=VARCHAR}
 	</delete>
-	<insert id="insert" parameterType="com.application.sso.server.model.Role">
+	<insert id="insert" parameterType="com.tech.application.sso.model.Role">
 		insert into sys_role (id,
 		app_id, name,
 		description, status, sort,
@@ -64,7 +64,7 @@
 		#{deleted,jdbcType=INTEGER}
 		)
 	</insert>
-	<update id="update" parameterType="com.application.sso.server.model.Role">
+	<update id="update" parameterType="com.tech.application.sso.model.Role">
 		update sys_role
 		<set>
 			<if test="appId != null">

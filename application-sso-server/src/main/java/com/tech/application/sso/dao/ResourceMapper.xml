@@ -23,7 +23,7 @@
 	</sql>
 	
 	<select id="findByPage" resultMap="BaseResultMap"
-		parameterType="com.application.sso.server.entity.ResourceQueryParams">
+		parameterType="com.tech.application.sso.entity.ResourceQueryParams">
 		select resource.*
 		from sys_resource resource, sys_app app, sys_role_permission rpermission
 		<where>
@@ -60,7 +60,7 @@
 		delete from sys_resource
 		where id = #{id,jdbcType=VARCHAR}
 	</delete>
-	<insert id="insert" parameterType="com.application.sso.server.model.Resource">
+	<insert id="insert" parameterType="com.tech.application.sso.model.Resource">
 		insert into sys_resource (id, app_id, parent_id,
 		name, description, resource_type,
 		url, status, sort, create_time,
@@ -72,7 +72,7 @@
 		#{createTime,jdbcType=TIMESTAMP},
 		#{updateTime,jdbcType=TIMESTAMP}, #{deleted,jdbcType=INTEGER})
 	</insert>
-	<update id="update" parameterType="com.application.sso.server.model.Resource">
+	<update id="update" parameterType="com.tech.application.sso.model.Resource">
 		update sys_resource
 		<set>
 			<if test="appId != null">

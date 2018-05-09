@@ -17,7 +17,7 @@
 		deleted
 	</sql>
 	<select id="findByPage" resultMap="BaseResultMap"
-		parameterType="com.application.sso.server.entity.AppQueryParams">
+		parameterType="com.tech.application.sso.entity.AppQueryParams">
 		select *
 		from sys_app
 		<where>
@@ -43,7 +43,7 @@
 		delete from sys_app
 		where id = #{id,jdbcType=VARCHAR}
 	</delete>
-	<insert id="insert" parameterType="com.application.sso.server.model.App">
+	<insert id="insert" parameterType="com.tech.application.sso.model.App">
 		insert into sys_app (id, code, name,
 		description, status, sort,
 		create_time, update_time, deleted
@@ -55,7 +55,7 @@
 		#{deleted,jdbcType=INTEGER}
 		)
 	</insert>
-	<update id="update" parameterType="com.application.sso.server.model.App">
+	<update id="update" parameterType="com.tech.application.sso.model.App">
 		update sys_app
 		<set>
 			<if test="code != null">

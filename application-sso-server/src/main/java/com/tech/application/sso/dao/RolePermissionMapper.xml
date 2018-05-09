@@ -28,7 +28,7 @@
 		where id = #{id,jdbcType=VARCHAR}
 	</delete>
 	
-	<insert id="insert" parameterType="com.application.sso.server.model.RolePermission">
+	<insert id="insert" parameterType="com.tech.application.sso.model.RolePermission">
 		insert into sys_role_permission (id, role_id, permission_id,
 		create_time, update_time, deleted
 		)
@@ -38,7 +38,7 @@
 		)
 	</insert>
 	
-	<update id="update" parameterType="com.application.sso.server.model.RolePermission">
+	<update id="update" parameterType="com.tech.application.sso.model.RolePermission">
 		update sys_role_permission
 		<set>
 			<if test="roleId != null">
